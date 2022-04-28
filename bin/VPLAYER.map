@@ -7,9 +7,9 @@ Section          Base   Top    High   Length
 .init.reruncheck D1A985 D1A985             0h
 .init            D1A985 D1A9B1            2Ch
 .fini            D1A9B1 D1A9E5            34h
-.text            D1A9E5 D1B767           D82h
-.data            D1B767 D1B76A             3h
-.rodata          D1B76A D1B836            CCh
+.text            D1A9E5 D1B798           DB3h
+.data            D1B798 D1B79B             3h
+.rodata          D1B79B D1B867            CCh
 .init_array      000000 000000             0h
 .ctors           000000 000000             0h
 .dtors           000000 000000             0h
@@ -37,22 +37,23 @@ _os_HomeUp                                                                      
 _os_DrawStatusBar                                                                                = 021A3C
 _os_GetKey                                                                                       = 021D38
 _os_GetCSC                                                                                       = 021D3C
-_free                                                                                            = D1AA2E
-_malloc                                                                                          = D1AADD
+__bdivu                                                                                          = D1AA2E
+_free                                                                                            = D1AA44
+_malloc                                                                                          = D1AAF3
 __alloc_base                                                                                     = D052C6
-__Znwj                                                                                           = D1AB7C
-__ZdlPv                                                                                          = D1ABBF
+__Znwj                                                                                           = D1AB92
+__ZdlPv                                                                                          = D1ABD5
 __ZNSt12_GLOBAL__N_113__new_handlerE                                                             = D052CC
-_clock                                                                                           = D1ABCF
-__frameset                                                                                       = D1ABDA
-__frameset0                                                                                      = D1ABE8
-__indcallhl                                                                                      = D1ABF3
-_memset                                                                                          = D1ABF4
-_outchar                                                                                         = D1AC0B
-_putchar                                                                                         = D1AC21
-_puts                                                                                            = D1AC2B
-_sbrk                                                                                            = D1AC47
-__sbrkbase                                                                                       = D1B767
+_clock                                                                                           = D1ABE5
+__frameset                                                                                       = D1ABF0
+__frameset0                                                                                      = D1ABFE
+__indcallhl                                                                                      = D1AC09
+_memset                                                                                          = D1AC0A
+_outchar                                                                                         = D1AC21
+_putchar                                                                                         = D1AC37
+_puts                                                                                            = D1AC41
+_sbrk                                                                                            = D1AC5D
+__sbrkbase                                                                                       = D1B798
 __idivs                                                                                          = 00013C
 __imulu                                                                                          = 000158
 __ishl                                                                                           = 000174
@@ -62,10 +63,10 @@ __lsub                                                                          
 __sdivu                                                                                          = 00020C
 _memcpy                                                                                          = 0000A4
 ___sprintf                                                                                       = 0000BC
-.missingappvar                                                                                   = D1B76A
-.libloadname                                                                                     = D1B76F
+.missingappvar                                                                                   = D1B79B
+.libloadname                                                                                     = D1B7A0
 .libloadnamelen                                                                                  = 000007
-.webaddress                                                                                      = D1B777
+.webaddress                                                                                      = D1B7A8
 ___init_clock                                                                                    = D1A96A
 __start                                                                                          = D1A985
 ___exithl                                                                                        = D1A9B1
@@ -74,37 +75,37 @@ skip.__Exit                                                                     
 skip._abort                                                                                      = D1A9B1
 _exit.sp                                                                                         = D1A9B2
 _exit.flash_wait_states                                                                          = D1A9BC
-__Z12fatutil_Initj                                                                               = D1AC65
-__ZL14handleUsbEvent9usb_eventPvP6global                                                         = D1ADEC
-LJTI1_0                                                                                          = D1B78C
-__Z14fatutil_GetFATv                                                                             = D1AE5D
-__Z14fatutil_Deinitv                                                                             = D1AE62
-__Z15fatutil_ListDirPKc17fat_list_option_t                                                       = D1AE90
-__ZN7tinystl6vectorI15fatutil_entry_tNS_9allocatorEE9push_backERKS1_                             = D1AF3D
-__ZN7tinystlL20buffer_insert_commonI15fatutil_entry_tNS_9allocatorEEEPT_PNS_6bufferIS3_T0_EES4_j = D1B037
+__Z12fatutil_Initj                                                                               = D1AC7B
+__ZL14handleUsbEvent9usb_eventPvP6global                                                         = D1AE02
+LJTI1_0                                                                                          = D1B7BD
+__Z14fatutil_GetFATv                                                                             = D1AE73
+__Z14fatutil_Deinitv                                                                             = D1AE78
+__Z15fatutil_ListDirPKc17fat_list_option_t                                                       = D1AEA6
+__ZN7tinystl6vectorI15fatutil_entry_tNS_9allocatorEE9push_backERKS1_                             = D1AF53
+__ZN7tinystlL20buffer_insert_commonI15fatutil_entry_tNS_9allocatorEEEPT_PNS_6bufferIS3_T0_EES4_j = D1B04D
 __ZL6global                                                                                      = D052CF
 __ZL10partitions                                                                                 = D056D2
 __ZL3fat                                                                                         = D05722
 __ZL6inited                                                                                      = D05B33
-__Z11return_trueP10vfile_head                                                                    = D1B20F
-__Z15ver_sprite_initP10vfile_head                                                                = D1B218
-__Z14ver_fullscreenP10fat_file_tP10vfile_head                                                    = D1B266
-__Z10ver_spriteP10fat_file_tP10vfile_head                                                        = D1B2C8
-__Z10do_nothingv                                                                                 = D1B369
-__Z17ver_sprite_deinitv                                                                          = D1B36A
-_main                                                                                            = D1B379
-LJTI6_0                                                                                          = D1B798
+__Z11return_trueP10vfile_head                                                                    = D1B225
+__Z15ver_sprite_initP10vfile_head                                                                = D1B22E
+__Z14ver_fullscreenP10fat_file_tP10vfile_head                                                    = D1B27C
+__Z10ver_spriteP10fat_file_tP10vfile_head                                                        = D1B2DE
+__Z10do_nothingv                                                                                 = D1B39A
+__Z17ver_sprite_deinitv                                                                          = D1B39B
+_main                                                                                            = D1B3AA
+LJTI6_0                                                                                          = D1B7C9
 _buf                                                                                             = D05B34
 _glob_data                                                                                       = D05C34
-L_.str                                                                                           = D1B7B6
-L_.str.1                                                                                         = D1B7C9
-L_.str.2                                                                                         = D1B7D8
-L_.str.3                                                                                         = D1B7E1
-L_.str.4                                                                                         = D1B7F1
-L_.str.6                                                                                         = D1B804
-L_.str.7                                                                                         = D1B80E
-L_.str.8                                                                                         = D1B818
-__ZL4vers                                                                                        = D1B824
+L_.str                                                                                           = D1B7E7
+L_.str.1                                                                                         = D1B7FA
+L_.str.2                                                                                         = D1B809
+L_.str.3                                                                                         = D1B812
+L_.str.4                                                                                         = D1B822
+L_.str.6                                                                                         = D1B835
+L_.str.7                                                                                         = D1B83F
+L_.str.8                                                                                         = D1B849
+__ZL4vers                                                                                        = D1B855
 _#msd_Open                                                                                       = D1A8F7
 _#msd_Close                                                                                      = D1A8FB
 _#msd_Info                                                                                       = D1A8FF

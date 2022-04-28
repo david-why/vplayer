@@ -103,14 +103,17 @@ BB2_5:
 __Z10ver_spriteP10fat_file_tP10vfile_head:
 	ld	hl, -9
 	call	__frameset
+	ld	iy, (ix + 9)
 	ld	de, 0
 	ld	hl, 2
 	ld	(ix + -6), hl
 	ld	(ix + -3), de
 BB3_1:
-	ld	iy, (ix + 9)
 	ld	a, (iy + 4)
-	ld	bc, 0
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	pop	bc
 	ld	c, a
 	ld	hl, (ix + -3)
 	or	a, a
@@ -139,23 +142,34 @@ BB3_1:
 	add	iy, de
 	ld	(ix + -6), iy
 	ex	de, hl
+	ld	iy, (ix + 9)
 	jq	BB3_1
 BB3_2:
 	push	de
 	pop	hl
-	ld	(ix + -3), bc
 	or	a, a
 	sbc	hl, bc
 	jq	nz, BB3_5
-	ld	hl, (_glob_data)
+	ld	iy, (ix + 9)
+	ld	a, (iy + 2)
+	ld	(ix + -3), bc
+	ld	b, 0
+	ld	c, a
+	ld.sis	hl, 320
+	call	__sdivu
+	ld	c, (iy + 3)
+	ld	b, -16
+	call	__bdivu
 	ld	(ix + -9), de
-	ld	de, 2
-	push	de
-	push	de
-	ld	de, 0
-	push	de
+	ld	e, a
+	ld	bc, (_glob_data)
 	push	de
 	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	push	hl
+	push	bc
 	call	_gfx_ScaledSprite_NoClip
 	pop	hl
 	pop	hl
@@ -163,12 +177,12 @@ BB3_2:
 	pop	hl
 	pop	hl
 	call	_gfx_SwapDraw
+	ld	bc, (ix + -3)
 	ld	de, (ix + -9)
 BB3_5:
 	ex	de, hl
-	ld	de, (ix + -3)
 	or	a, a
-	sbc	hl, de
+	sbc	hl, bc
 	jq	z, BB3_6
 	ld	a, 0
 	jq	BB3_8
@@ -702,9 +716,9 @@ __ZL4vers:
 	dl	__Z17ver_sprite_deinitv
 
 	ident	"clang version 12.0.0 (https://github.com/jacobly0/llvm-project 170be88120e3aa88c20eea5615ba76b8f1d6c647)"
-	extern	__lcmpu
 	extern	__Z14fatutil_GetFATv
 	extern	__Unwind_SjLj_Register
+	extern	__lcmpu
 	extern	__frameset
 	extern	_malloc
 	extern	_gfx_Begin
@@ -714,11 +728,11 @@ __ZL4vers:
 	extern	__lsub
 	extern	_gfx_ScaledSprite_NoClip
 	extern	_os_ClrLCD
-	extern	_os_GetKey
 	extern	_puts
 	extern	__ishl
-	extern	_gfx_SwapDraw
 	extern	_os_DrawStatusBar
+	extern	_gfx_SwapDraw
+	extern	_os_GetKey
 	extern	_gfx_SetDraw
 	extern	__idivs
 	extern	__sdivu
@@ -737,3 +751,4 @@ __ZL4vers:
 	extern	__frameset0
 	extern	_clock
 	extern	_os_HomeUp
+	extern	__bdivu

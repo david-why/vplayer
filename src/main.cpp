@@ -58,6 +58,8 @@ bool ver_sprite(fat_file_t *file, vfile_head *head)
         read += fat_Read(file, 1, ((gfx_sprite_t *)glob_data)->data + FAT_BLOCK_SIZE * i);
     if (read != head->head[2])
         return false;
+    uint8_t wscale = 320 / head->head[0];
+    uint8_t hscale = 240 / head->head[1];
     // gfx_Sprite((gfx_sprite_t *)glob_data, 0, 0);
     // unsigned int read = 0;
     // for (uint8_t i = 0; i < head->head[2]; i++)
@@ -66,7 +68,7 @@ bool ver_sprite(fat_file_t *file, vfile_head *head)
     //     return false;
     // for (unsigned int y = 0; y < head->head[1]; y++)
     //     memcpy(gfx_vbuffer[y], ((uint8_t *)glob_data) + y * head->head[0], head->head[0]);
-    gfx_ScaledSprite_NoClip((gfx_sprite_t *)glob_data, 0, 0, 2, 2);
+    gfx_ScaledSprite_NoClip((gfx_sprite_t *)glob_data, 0, 0, wscale, hscale);
     gfx_SwapDraw();
     return true;
 }
