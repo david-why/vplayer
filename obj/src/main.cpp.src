@@ -460,6 +460,13 @@ BB6_15:
 	pop	hl
 	pop	hl
 	pop	hl
+	ld	iy, -917456
+	ld	l, (iy)
+	ld	h, (iy + 1)
+	ld.sis	bc, 1080
+	call	__sor
+	ld	(iy), l
+	ld	(iy + 1), h
 	ld	de, -607
 	lea	hl, ix + 0
 	add	hl, de
@@ -749,6 +756,7 @@ __ZL4vers:
 	extern	_gfx_End
 	extern	_free
 	extern	__frameset0
+	extern	__sor
 	extern	_clock
 	extern	_os_HomeUp
 	extern	__bdivu

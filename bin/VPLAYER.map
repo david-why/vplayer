@@ -7,9 +7,9 @@ Section          Base   Top    High   Length
 .init.reruncheck D1A985 D1A985             0h
 .init            D1A985 D1A9B1            2Ch
 .fini            D1A9B1 D1A9E5            34h
-.text            D1A9E5 D1B798           DB3h
-.data            D1B798 D1B79B             3h
-.rodata          D1B79B D1B867            CCh
+.text            D1A9E5 D1B7B1           DCCh
+.data            D1B7B1 D1B7B4             3h
+.rodata          D1B7B4 D1B880            CCh
 .init_array      000000 000000             0h
 .ctors           000000 000000             0h
 .dtors           000000 000000             0h
@@ -53,7 +53,7 @@ _outchar                                                                        
 _putchar                                                                                         = D1AC37
 _puts                                                                                            = D1AC41
 _sbrk                                                                                            = D1AC5D
-__sbrkbase                                                                                       = D1B798
+__sbrkbase                                                                                       = D1B7B1
 __idivs                                                                                          = 00013C
 __imulu                                                                                          = 000158
 __ishl                                                                                           = 000174
@@ -61,12 +61,13 @@ __ishru                                                                         
 __lcmpu                                                                                          = 0001AC
 __lsub                                                                                           = 0001F8
 __sdivu                                                                                          = 00020C
+__sor                                                                                            = 000234
 _memcpy                                                                                          = 0000A4
 ___sprintf                                                                                       = 0000BC
-.missingappvar                                                                                   = D1B79B
-.libloadname                                                                                     = D1B7A0
+.missingappvar                                                                                   = D1B7B4
+.libloadname                                                                                     = D1B7B9
 .libloadnamelen                                                                                  = 000007
-.webaddress                                                                                      = D1B7A8
+.webaddress                                                                                      = D1B7C1
 ___init_clock                                                                                    = D1A96A
 __start                                                                                          = D1A985
 ___exithl                                                                                        = D1A9B1
@@ -77,7 +78,7 @@ _exit.sp                                                                        
 _exit.flash_wait_states                                                                          = D1A9BC
 __Z12fatutil_Initj                                                                               = D1AC7B
 __ZL14handleUsbEvent9usb_eventPvP6global                                                         = D1AE02
-LJTI1_0                                                                                          = D1B7BD
+LJTI1_0                                                                                          = D1B7D6
 __Z14fatutil_GetFATv                                                                             = D1AE73
 __Z14fatutil_Deinitv                                                                             = D1AE78
 __Z15fatutil_ListDirPKc17fat_list_option_t                                                       = D1AEA6
@@ -94,18 +95,18 @@ __Z10ver_spriteP10fat_file_tP10vfile_head                                       
 __Z10do_nothingv                                                                                 = D1B39A
 __Z17ver_sprite_deinitv                                                                          = D1B39B
 _main                                                                                            = D1B3AA
-LJTI6_0                                                                                          = D1B7C9
+LJTI6_0                                                                                          = D1B7E2
 _buf                                                                                             = D05B34
 _glob_data                                                                                       = D05C34
-L_.str                                                                                           = D1B7E7
-L_.str.1                                                                                         = D1B7FA
-L_.str.2                                                                                         = D1B809
-L_.str.3                                                                                         = D1B812
-L_.str.4                                                                                         = D1B822
-L_.str.6                                                                                         = D1B835
-L_.str.7                                                                                         = D1B83F
-L_.str.8                                                                                         = D1B849
-__ZL4vers                                                                                        = D1B855
+L_.str                                                                                           = D1B800
+L_.str.1                                                                                         = D1B813
+L_.str.2                                                                                         = D1B822
+L_.str.3                                                                                         = D1B82B
+L_.str.4                                                                                         = D1B83B
+L_.str.6                                                                                         = D1B84E
+L_.str.7                                                                                         = D1B858
+L_.str.8                                                                                         = D1B862
+__ZL4vers                                                                                        = D1B86E
 _#msd_Open                                                                                       = D1A8F7
 _#msd_Close                                                                                      = D1A8FB
 _#msd_Info                                                                                       = D1A8FF

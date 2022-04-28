@@ -145,28 +145,21 @@ int main()
     fat_Open(&file, fatutil_GetFAT(), buf);
     vfile_head head;
     fat_Read(&file, 1, &head);
+    timer_Enable(2, TIMER_32K, TIMER_0INT, TIMER_UP);
 
     if (vers[head.version].init(&head))
     {
-        // uint16_t tim = 1000 / head.framerate;
         unsigned long clk = CLOCKS_PER_SEC / head.framerate;
         unsigned long c = clock();
         while (true)
         {
             if (!vers[head.version].nxtframe(&file, &head))
                 break;
-            // unsigned int read = 0;
-            // for (uint8_t i = 0; i < 10; i++)
-            //     read += fat_Read(&file, 30, vram + i * 30 * FAT_BLOCK_SIZE);
-            // if (read != 300)
-            //     break;
             sk_key_t key = os_GetCSC();
             if (key == sk_Clear)
                 break;
-            // delay(tim);
             while (clock() - c < clk)
                 ;
-            // ticksleep(clk);
             c = clock();
         }
     }
