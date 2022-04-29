@@ -89,8 +89,8 @@ struct version_t
 
 int main()
 {
-    clock();
-    CLOCKS_PER_SEC;
+    os_ClrHome();
+    puts("prgmVPLAYER " VPLAYER_VERSION);
     puts("Waiting for USB...");
     uint8_t err = fatutil_Init(10);
     if (err)
