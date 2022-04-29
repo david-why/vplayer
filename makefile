@@ -21,5 +21,5 @@ endif
 
 include $(CEDEV)/meta/makefile.mk
 
-release: bin/VPLAYER.8xp
-	tar czvf dist/vplayer-$(VERSION).tgz -C bin VPLAYER.8xp VPLAYER.bin -C .. src
+release: bin mkvideo.py
+	tar czvf dist/vplayer-$(VERSION).tgz -C bin VPLAYER.8xp VPLAYER.bin -C .. mkvideo.py src
